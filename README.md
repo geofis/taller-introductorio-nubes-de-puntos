@@ -1,1 +1,364 @@
-# taller-introductorio-nubes-de-puntos
+Programa del taller: visualización, manipulación, limpieza e
+introducción a la clasificación básica de nubes de puntos con
+herramientas de código abierto
+================
+José Ramón Martínez Batlle
+2026-04-01
+
+# Descripción general
+
+Este taller introductorio ofrece una aproximación práctica y básica al
+trabajo con nubes de puntos tridimensionales usando herramientas de
+código abierto. A lo largo de cuatro sesiones de tres horas cada una,
+las y los participantes aprenderán a reconocer la estructura general de
+una nube de puntos, explorar sus atributos más frecuentes, visualizarla
+en distintos entornos, efectuar operaciones elementales de limpieza y
+recorte, y realizar una introducción a la clasificación manual y
+semiautomática de puntos.
+
+El énfasis del taller será eminentemente práctico y se apoyará sobre
+todo en *CloudCompare* como herramienta principal de escritorio,
+complementada con el uso básico de *QGIS* para exploración geoespacial,
+*Potree* para visualización web, y una breve introducción conceptual y
+operativa a flujos sencillos con *PDAL* y *WhiteboxTools* opcionalmente.
+La clasificación semiautomática se abordará de forma muy elemental,
+limitada a ejemplos simples como separación terreno/no terreno o
+preclasificaciones exploratorias de apoyo, evitando procedimientos
+avanzados que requerirían mayor tiempo, experiencia previa o
+entrenamiento algorítmico más profundo.
+
+# Justificación
+
+Las nubes de puntos se han convertido en una fuente de datos cada vez
+más frecuente en levantamientos LiDAR, fotogrametría de proximidad,
+fotogrametría con drones y otros métodos de captura tridimensional. Su
+aprovechamiento exige habilidades básicas de inspección, control de
+calidad, limpieza, recorte, exploración de atributos y comprensión de
+clases o categorías de puntos. Un taller breve debe privilegiar la
+comprensión del flujo de trabajo general y el uso correcto de
+operaciones simples antes que la profundización en algoritmos complejos.
+
+# Objetivo general
+
+Introducir a las y los participantes en el manejo básico de nubes de
+puntos tridimensionales mediante herramientas de código abierto, con
+énfasis en visualización, exploración de atributos, limpieza, recorte y
+una iniciación elemental a la clasificación manual y semiautomática.
+
+# Objetivos específicos
+
+0.  Repasar las prácticas y parámetros de configuración claves para
+    producir nubes de puntos de calidad.
+1.  Reconocer la estructura y los atributos básicos de una nube de
+    puntos tridimensional.
+2.  Instalar y poner en funcionamiento un entorno mínimo de trabajo
+    reproducible para el taller.
+3.  Visualizar nubes de puntos en herramientas de escritorio, SIG y
+    visor web.
+4.  Realizar operaciones básicas de limpieza, segmentación, recorte y
+    exportación.
+5.  Comprender el sentido de la clasificación de puntos y aplicar
+    ejercicios elementales de clasificación manual.
+6.  Ejecutar un ejemplo muy básico de clasificación semiautomática,
+    especialmente para separar terreno y no terreno.
+7.  Identificar formatos de intercambio comunes y criterios mínimos de
+    calidad para flujos introductorios de trabajo.
+
+# Perfil de ingreso
+
+El taller está dirigido al personal de la sección Fotogrametría del
+Instituto Cartográfico Militar, con miras a extenderlo a personas con
+interés en datos geoespaciales tridimensionales, topografía,
+fotogrametría, percepción remota, geomática, geografía, ingeniería,
+arqueología, arquitectura, geología u otras áreas afines. No se
+requieren conocimientos previos de programación ni experiencia avanzada
+con LiDAR o fotogrametría, aunque sí se recomienda familiaridad básica
+con archivos geoespaciales, manejo de carpetas y uso general del
+computador.
+
+# Duración y modalidad
+
+La duración total del taller será de 12 horas, distribuidas en 4 días de
+3 horas cada uno.
+
+# Enfoque metodológico
+
+El taller tendrá una orientación práctica. Cada sesión combinará una
+explicación breve de conceptos con demostraciones guiadas y ejercicios
+sencillos de ejecución inmediata. Dado el tiempo disponible, el énfasis
+estará puesto en la comprensión del flujo general de trabajo y en la
+resolución de tareas básicas, evitando abarcar herramientas o algoritmos
+avanzados de forma excesiva.
+
+La idea es usar **CloudCompare como eje central**, **QGIS como apoyo
+geoespacial**, **Potree como demostración de publicación/visualización
+web**, y **PDAL solo para un ejemplo muy simple de automatización**.
+Herramientas más técnicas o de mayor curva de aprendizaje se mencionarán
+en el taller, pero quedarán sólo como referencias para continuidad
+posterior.
+
+# Herramientas a utilizar
+
+## Herramientas principales
+
+- CloudCompare
+- QGIS
+- Potree
+
+## Herramientas complementarias u opcionales
+
+- PDAL
+- WhiteboxTools
+- Entorno virtualizado (opcionalmente) para prácticas o tareas que no
+  requieran visualización (órdenes de consola o procesos)
+- Utilidades básicas de línea de comandos
+- Visores o complementos adicionales según disponibilidad del aula
+
+# Contenidos
+
+## Unidad 1. Introducción a las nubes de puntos y preparación del entorno
+
+Concepto de nube de puntos. Origen de los datos. Diferencias generales
+entre nube de puntos LiDAR y nube de puntos fotogramétrica. Coordenadas
+y atributos. Prácticas y parámetros de configuración claves para
+producir nubes de puntos de calidad. Formatos frecuentes. Importancia
+del sistema de referencia. Organización de carpetas de trabajo.
+Instalación y comprobación del entorno. Uso de máquina virtual como
+estrategia para estandarizar el ambiente del taller.
+
+## Unidad 2. Visualización y exploración básica
+
+Carga de nubes de puntos en CloudCompare. Navegación tridimensional.
+Exploración por color, elevación y otros atributos. Inspección de
+metadatos. Visualización básica en QGIS. Concepto de visor web de nubes
+de puntos con Potree. Exportaciones simples y capturas de vista.
+
+## Unidad 3. Manipulación y limpieza básica
+
+Selección de subconjuntos. Segmentación manual simple. Recorte espacial.
+Eliminación de ruido evidente y puntos espurios. Submuestreo y reducción
+de densidad con fines didácticos. Separación por áreas de interés.
+Revisión de consistencia geométrica básica. Exportación de resultados.
+
+## Unidad 4. Introducción a la clasificación manual y semiautomática
+
+Qué significa clasificar una nube de puntos. Clases básicas y utilidad
+práctica. Introducción a clasificación manual en CloudCompare. Ejemplos
+sencillos de terreno y no terreno. Idea general de la clasificación
+semiautomática. Ejemplo mínimo con un flujo simple en PDAL. Discusión de
+limitaciones, errores frecuentes y necesidad de validación visual.
+
+# Distribución temporal por sesiones
+
+## Día 1. Fundamentos, formatos e instalación del entorno (3 horas)
+
+### Contenidos
+
+- Presentación del taller y de los objetivos
+- Qué es una nube de puntos
+- Principales fuentes de generación de nubes
+- Prácticas y parámetros de configuración claves para producir nubes de
+  puntos de calidad.
+- Formatos frecuentes de archivo
+- Estructura básica de atributos
+- Preparación del entorno de trabajo
+- Instalación y prueba de herramientas
+- Introducción al uso de máquina virtual
+
+### Actividades
+
+- Revisión de archivos de ejemplo
+- Identificación de atributos comunes
+- Instalación o verificación del software base
+- Comprobación de apertura de una nube de puntos sencilla
+
+### Resultado esperado
+
+Cada participante deja preparado un entorno mínimo de trabajo funcional
+y comprende la estructura general de una nube de puntos.
+
+## Día 2. Visualización y exploración en CloudCompare, QGIS y Potree (3 horas)
+
+### Contenidos
+
+- Navegación tridimensional en CloudCompare
+- Visualización por RGB, altura e intensidad
+- Medidas e inspección visual elemental
+- Exploración básica en QGIS
+- Conversión o preparación básica para visualización web
+- Introducción a Potree
+
+### Actividades
+
+- Abrir y recorrer una nube de puntos
+- Cambiar simbología y escalas de color
+- Explorar atributos disponibles
+- Comparar visualización en CloudCompare y QGIS
+- Demostración breve de visualización en Potree
+
+### Resultado esperado
+
+Cada participante puede abrir, inspeccionar y visualizar una nube de
+puntos en al menos dos entornos diferentes.
+
+## Día 3. Limpieza, recorte y manipulación básica (3 horas)
+
+### Contenidos
+
+- Selección manual de regiones
+- Segmentación y extracción de subconjuntos
+- Eliminación de ruido evidente
+- Recorte por extensión o por región de interés
+- Submuestreo y simplificación para fines docentes
+- Exportación de productos derivados
+
+### Actividades
+
+- Aislar una zona de interés
+- Eliminar puntos anómalos sencillos
+- Guardar una nube depurada
+- Comparar antes y después de la limpieza
+
+### Resultado esperado
+
+Cada participante genera una versión más limpia y manejable de una nube
+de puntos original.
+
+## Día 4. Introducción a clasificación manual y semiautomática elemental (3 horas)
+
+### Contenidos
+
+- Qué es una clase en una nube de puntos
+- Clasificación manual básica
+- Revisión visual de clases
+- Introducción al concepto de terreno/no terreno
+- Ejemplo mínimo con PDAL
+- Discusión sobre validación y limitaciones
+- Cierre del taller
+
+### Actividades
+
+- Etiquetado manual básico de una selección pequeña
+- Ejecución guiada de un flujo elemental de clasificación automática
+- Comparación visual entre clasificación automática y revisión manual
+- Discusión final de errores y buenas prácticas
+
+### Resultado esperado
+
+Cada participante comprende la lógica general de la clasificación y
+puede ejecutar un flujo introductorio simple, además de reconocer la
+necesidad de revisión visual posterior.
+
+# Estrategia didáctica
+
+La enseñanza se basará en demostraciones guiadas, repetición de
+procedimientos esenciales y ejercicios cortos sobre archivos de ejemplo.
+Se priorizará que las y los participantes comprendan bien unas pocas
+tareas fundamentales, en lugar de abarcar un repertorio muy amplio de
+operaciones avanzadas.
+
+# Recursos requeridos
+
+## Hardware
+
+- Computador personal o institucional
+- Memoria RAM suficiente para archivos medianos
+- Espacio disponible en disco
+- Mouse, preferiblemente con rueda
+- Proyector o pantalla compartida para demostraciones
+
+## Software
+
+- CloudCompare
+- QGIS
+- Potree o visualización preparada por el docente
+- PDAL (opcional)
+- WhiteboxTools (opcional)
+- VirtualBox u otro software de virtualización, si se decide usar
+  máquina virtual (disponer de la máquina virtual al menos en una de las
+  PC del lugar del curso)
+- Archivos de práctica previamente preparados por el docente
+
+## Datos sugeridos para prácticas
+
+- Una nube de puntos pequeña y limpia para introducción
+- Una nube de puntos con ruido o complejidad moderada para limpieza
+- Un ejemplo sencillo para terreno/no terreno
+- Un conjunto reducido de datos para demostración de visor web
+
+# Evaluación sugerida
+
+Dado el carácter breve e introductorio del taller, se recomienda una
+evaluación ligera basada en productos prácticos sencillos.
+
+## Opción de evaluación
+
+1.  Apertura correcta de una nube de puntos y reconocimiento de sus
+    atributos principales.
+2.  Entrega de una nube recortada o depurada.
+3.  Ejercicio elemental de clasificación manual o revisión de
+    clasificación.
+4.  Participación activa en las prácticas guiadas.
+
+# Competencias o capacidades a desarrollar
+
+Al finalizar el taller, las y los participantes estarán en capacidad de:
+
+1.  Interpretar de manera básica la estructura de una nube de puntos.
+2.  Visualizar nubes de puntos en software abierto de uso común.
+3.  Ejecutar operaciones simples de limpieza y recorte.
+4.  Entender la lógica general de la clasificación de puntos.
+5.  Aplicar una clasificación manual básica y seguir un ejemplo mínimo
+    de clasificación semiautomática.
+6.  Organizar un flujo introductorio de trabajo reproducible para nubes
+    de puntos.
+
+# Alcances y limitaciones del taller
+
+Este taller no pretende formar especialistas en procesamiento avanzado
+de LiDAR ni en clasificación automatizada de alta precisión. Su alcance
+es introductorio. Por tanto, no se profundizará en calibración avanzada,
+programación compleja, aprendizaje automático, ajuste fino de
+algoritmos, control de calidad exhaustivo, manejo de grandes
+infraestructuras de datos ni análisis tridimensional avanzado.
+
+# Observaciones para la implementación
+
+Se recomienda trabajar con archivos pequeños o medianos, ya preparados
+por el docente, para evitar que el tiempo del taller se consuma en
+conversiones pesadas o en problemas de rendimiento. También se
+recomienda disponer de un entorno previamente probado, ya sea por
+instalación nativa o mediante máquina virtual, con el fin de reducir
+problemas de compatibilidad durante las sesiones.
+
+# Propuesta mínima de práctica final
+
+Como cierre del taller, cada participante podrá desarrollar un ejercicio
+corto consistente en:
+
+1.  abrir una nube de puntos,
+2.  inspeccionar atributos y visualización,
+3.  recortar una zona de interés,
+4.  limpiar puntos evidentemente problemáticos,
+5.  aplicar una clasificación manual básica o revisar una clasificación
+    automática simple,
+6.  exportar el resultado final.
+
+# Bibliografía y recursos de consulta sugeridos
+
+- Documentación oficial de CloudCompare.
+- Manual de usuario de QGIS para trabajo con nubes de puntos.
+- Documentación oficial de PDAL.
+- Manual de WhiteboxTools para herramientas LiDAR.
+- Documentación y ejemplos de Potree.
+
+# Cronograma resumido
+
+| Día | Tema central                                 | Horas |
+|:---:|:---------------------------------------------|------:|
+|  1  | Fundamentos, formatos e instalación          |     3 |
+|  2  | Visualización y exploración                  |     3 |
+|  3  | Limpieza y manipulación                      |     3 |
+|  4  | Clasificación manual y semiautomática básica |     3 |
+
+# Referencias
