@@ -14,10 +14,10 @@
 |-------|-------|
 | Proveedor | Digital Ocean |
 | SO | Ubuntu 22.04 LTS |
-| Droplet ID | _(registrar)_ |
+| Droplet ID | _BORRAR_YA_ |
 | IP Pública | _(registrar)_ |
-| Región | _(registrar)_ |
-| Tamaño (vCPU / RAM / Disco) | _(registrar)_ |
+| Región | _New York_ |
+| Tamaño (vCPU / RAM / Disco) | _2 vCPU, 4 GB RAM, 120 GB_ |
 | Fecha de creación | _(registrar)_ |
 | Responsable | _(registrar)_ |
 
